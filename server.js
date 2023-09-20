@@ -8,6 +8,7 @@ const jsxEngine = require('jsx-view-engine')
 const pokemon = require('./models/pokemon.js');
 
 
+
 app.set('view engine', 'jsx');
 // app.engine('jsx', require('jsx-view-engine').createEngine());
 app.engine('jsx', jsxEngine())
@@ -25,7 +26,7 @@ app.get('/pokemon/', function(req, res){
 
 //show Router
 app.get('/pokemon/:id', function(req, res){
-    res.render('pokemon/Show', { 
+    res.render('Show', { 
         p: pokemon[req.params.id] 
     });
 });  
