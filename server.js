@@ -22,6 +22,14 @@ app.get('/pokemon/', function(req, res){
 })
 
 
+
+//show Router
+app.get('/pokemon/:id', function(req, res){
+    res.render('pokemon/Show', { 
+        p: pokemon[req.params.id] 
+    });
+});  
+
 app.listen(3000, () => {
     console.log('listening');
 });
