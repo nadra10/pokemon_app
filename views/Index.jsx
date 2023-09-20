@@ -12,7 +12,7 @@ class Index extends React.Component {
             <li key={i}>
             <a href={`/pokemon/${i}`}>{p.name}</a>
             <br></br>
-            <img src={`${p.img}`}></img>
+            <img src={`${p.img}.jpg`}></img>
           </li>
            )
 
