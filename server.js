@@ -22,7 +22,23 @@ app.get('/pokemon/', function(req, res){
     res.render('Index', { pokemon: pokemon });
 })
 
+app.get('/pokemon/new', (req, res) => {
+    res.render('New');
+});
 
+app.post('/pokemon', (req, res)=>{
+    console.log(req.body);
+    res.send('data received');
+});
+
+
+app.post('/pokemon', (req, res)=>{
+
+    pokemon.push(req.body);
+    console.log(pokemon);
+    // res.send('data received');
+    res.redirect('/pokemon'); //send the user back to /fruits
+});
 
 //show Router
 app.get('/pokemon/:id', function(req, res){
@@ -30,6 +46,10 @@ app.get('/pokemon/:id', function(req, res){
         p: pokemon[req.params.id] 
     });
 });  
+
+
+
+
 
 app.listen(3000, () => {
     console.log('listening');
