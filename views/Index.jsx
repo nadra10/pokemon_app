@@ -1,18 +1,22 @@
 const React = require('react');
 
+
 class Index extends React.Component {
     render() {
-        const { pokemon } = this.props;
+        const pokemon  = this.props.pokemon;
         return (
     <div>
       <h1>See All The Pokemon!</h1>
       <ul>
-        {pokemon.map((p, i) => {
+        {this.props.pokemon.map((p, i) => {
            return ( 
             <li key={i}>
-            <a href={`/pokemon/${i}`}>{p.name}</a>
+            <a href={`/pokemon/${p.id}`}>{p.name}</a>
             <br></br>
             <img src={`${p.img}.jpg`}></img>
+            <form action={`/pokemon/${p._id}?_method=DELETE`} method="POST">
+              <input type="submit" value="DELETE"/>
+            </form>
           </li>
            )
 
